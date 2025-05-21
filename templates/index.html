@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 0.6rem;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>🧮 Calculadora Web</h2>
+    <form method="POST">
+        <input type="number" name="num1" step="any" placeholder="Número 1" required>
+        <select name="operacao">
+            <option value="+">+</option>
+            <option value="-">−</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+        <input type="number" name="num2" step="any" placeholder="Número 2" required>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if resultado is not none %}
+        <h3>Resultado: {{ resultado }}</h3>
+    {% endif %}
+</body>
+</html>
